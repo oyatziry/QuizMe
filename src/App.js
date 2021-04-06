@@ -1,8 +1,10 @@
 import React from 'react';
-import './App.css';
 
 import Header from './Components/Header';
 import Routes from './Config/routes.js';
+
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
