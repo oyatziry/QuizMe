@@ -13,6 +13,11 @@ function SignUp() {
   function handleSubmit(event){
     event.preventDefault();
 
+    fetch('/signup', {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name, username, password})
+    }).then(data => console.log('Success', data));
   }
 
   return (

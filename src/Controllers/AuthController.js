@@ -11,6 +11,8 @@ router.post('/signup', (req,res) => {
   })
 }) 
 
+module.exports = router;
+
 // const create = (req,res) => {
 //   db.User.create(req.body, (err, savedUser) => {
 //     if (err) console.log('Error in creating user:', err);
