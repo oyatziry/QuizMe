@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from '../Pages/Home';
 import Profile from '../Pages/Profile';
+import SignUp from '../Pages/SignUp';
 
 import { useRecoilValue } from 'recoil'
 import { loggedInState } from "../recoil/selectors";
@@ -13,6 +14,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path='/' component={ Home } />
+      <Route path='/signup' component={ SignUp } />
       { loggedIn && (
         <Switch>
           <Route exact path='/profile' component={ Profile } />

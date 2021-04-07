@@ -32,7 +32,10 @@ function Header () {
             <Nav.Link><Link onClick={ logout }>Log Out</Link></Nav.Link>
           </>
         ) : (
-          <Nav.Link><Link onClick={ login }>Log In</Link></Nav.Link>
+          <>
+            <Nav.Link><Link onClick={ login }>Log In</Link></Nav.Link>
+            <Nav.Link><Link to={'/signup'}>Sign Up</Link></Nav.Link>
+          </>
         ) }
       </Nav>
     </Navbar>
