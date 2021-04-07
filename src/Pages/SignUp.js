@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
+import AuthModel from '../models/auth';
+import { useRecoilState } from 'recoil';
+import { userState } from '../recoil/atoms';
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { userState } from '../recoil/atoms';
 
-function SignUp() {
+function SignUp(props) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [user, setUser] = useRecoilState(userState);
+
   function handleSubmit(event){
     event.preventDefault();
 
-    fetch('/signup', {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({name, username, password})
-    }).then(data => console.log('Success', data));
+    AuthModel.create({ name, username, password }).then(
+      (userData) => {
+        setUser(userData.user.username);
+        props.history.push('/profile')
+      }
+    );
   }
 
   return (
@@ -58,9 +62,6 @@ function SignUp() {
           <Form.Control type="password" placeholder="Confirm Password" />
         </Form.Group>
 
-        {/* <Button variant="primary" type="submit">
-          Submit
-        </Button> */}
         <input type="submit" value="Submit"></input>
       </Form>
     </Container>
