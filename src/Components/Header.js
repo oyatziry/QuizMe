@@ -28,13 +28,13 @@ function Header () {
       <Nav className="justify-content-end">
         { user ? (
           <>
-            <Nav.Link><Link to={'/profile'}>Profile</Link></Nav.Link>
-            <Nav.Link><Link onClick={ logout }>Log Out</Link></Nav.Link>
+            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/" onClick={ logout }>Log Out</Nav.Link>
           </>
         ) : (
           <>
-            <Nav.Link><Link onClick={ login }>Log In</Link></Nav.Link>
-            <Nav.Link><Link to={'/signup'}>Sign Up</Link></Nav.Link>
+            <Nav.Link as={Link} to='/' onClick={ login }>Log In</Nav.Link>
+            <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
           </>
         ) }
       </Nav>
