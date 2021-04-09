@@ -19,7 +19,7 @@ const Routes = () => {
       { loggedIn && (
         <Switch>
           <Route exact path='/profile' component={ Profile } />
-          <Route path='/deck/:id' component={ Show } />
+          <Route path='/:id' component={ Show } />
         </Switch>
       )}
     </Switch>

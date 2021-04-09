@@ -20,10 +20,10 @@ function Home() {
 
   function generateDeckCards(decks){
     return decks.map((deck, index) => (
-      <Link to={`/deck/${deck._id}`} key={index}>
+      <Link to={`/${deck._id}`} key={index}>
         <DeckCard {...deck}/>
       </Link>
-    ));
+    )); 
   }
 
   return (

@@ -8,11 +8,12 @@ function Show(props){
 
   useEffect(function(){
     console.log('useEffect was called');
-    fetchDeckInfo();
+    fetchDeckInfo(deckId);
   }, []);
 
-  function fetchDeckInfo(deckId){
-    DeckModel.findOne(deckId).then((data) => {
+  function fetchDeckInfo(id){
+    DeckModel.findOne(id).then((data) => {
+      console.log(data);
       setDeck(data.deck);
     })
   };
@@ -21,7 +22,7 @@ function Show(props){
     <div>
       <h1> This is the show page </h1>
       <h3> {deck.name} </h3>
-      {/* <p> This deck has {deck.flashcards.length} flashcards.</p> */}
+      <p> This deck has {deck.flashcards.length} flashcards.</p>
     </div>
   );
 }

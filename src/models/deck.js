@@ -6,7 +6,7 @@ class DeckModel {
   }
 
   static findOne = (id) => {
-    return fetch(`${url}/deck/${id}`).then(res => res.json());
+    return fetch(`${url}/${id}`).then(res => res.json());
   }
 }
 
