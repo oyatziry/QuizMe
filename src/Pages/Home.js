@@ -19,12 +19,11 @@ function Home() {
   };
 
   function generateDeckCards(decks){
-    // console.log(decks);
-    return decks.map((deck, index) => {
-      <Link to={`deck/${deck._id}`} key={index}>
+    return decks.map((deck, index) => (
+      <Link to={`/deck/${deck._id}`} key={index}>
         <DeckCard {...deck}/>
       </Link>
-    });
+    ));
   }
 
   return (
