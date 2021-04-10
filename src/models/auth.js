@@ -10,6 +10,16 @@ class AuthModel {
       body: JSON.stringify(formData)
     }).then( res => res.json() )
   }
+
+  static find = (logInData) => {
+    return fetch(`${url}/login`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(logInData)
+    }).then( res => res.json() );
+  }
 }
 
 export default AuthModel;
