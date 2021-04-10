@@ -13,7 +13,8 @@ class AuthModel {
 
   static find = (logInData) => {
     return fetch(`${url}/login`, {
-      method: "GET",
+      method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json"
       },
