@@ -10,13 +10,13 @@ import Nav from 'react-bootstrap/Nav';
 function Header () {
   const [user, setUser] = useRecoilState(userState);
 
-  function login() {
-    const dbUser = {
-      username: 'max',
-      password: 'password'
-    };
-    setUser(dbUser);
-  }
+  // function login() {
+  //   const dbUser = {
+  //     username: 'max',
+  //     password: 'password'
+  //   };
+  //   setUser(dbUser);
+  // }
 
   function logout() {
     setUser(null);
@@ -33,7 +33,7 @@ function Header () {
           </>
         ) : (
           <>
-            <Nav.Link as={Link} to='/' onClick={ login }>Log In</Nav.Link>
+            <Nav.Link as={Link} to='/login'>Log In</Nav.Link>
             <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
           </>
         ) }
