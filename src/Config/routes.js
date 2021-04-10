@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from '../Pages/Home';
 import SignUp from '../Pages/SignUp';
+import LogIn from '../Pages/LogIn';
 import Profile from '../Pages/Profile';
 import Show from '../Pages/Show';
 
@@ -15,6 +16,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path='/' component={ Home } />
+      <Route path='/login' component={ LogIn } />
       <Route path='/signup' component={ SignUp } />
       { loggedIn && (
         <Switch>
