@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,17 +6,20 @@ import AuthModel from '../models/auth';
 import { useRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
 
-function LogIn(){
-  const [user, setUser] = useRecoilState(userState);
+function LogIn(props){
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  // function fetchUser(username){
-  //   AuthModel.find(username).then((data) => {
-  //     console.log(data);
-  //   })
-  // }
+  const [user, setUser] = useRecoilState(userState);
 
   function handleSubmit(event){
     event.preventDefault();
+
+    AuthModel.find({'username': username}).then((userData) => {
+      console.log(userData);
+      setUser(userData.user.name);
+      props.history.push('/profile');
+    })
   }
 
   return (
@@ -27,8 +30,8 @@ function LogIn(){
           <Form.Control 
             type="text" 
             placeholder="Username" 
-            // onChange={ (e) => setUsername(e.target.value) }
-            // value={username}
+            onChange={ (e) => setUsername(e.target.value) }
+            value={username}
           />
         </Form.Group>
 
@@ -37,8 +40,8 @@ function LogIn(){
           <Form.Control 
             type="password" 
             placeholder="Password" 
-            // onChange={ (e) => setPassword(e.target.value) }
-            // value={password}
+            onChange={ (e) => setPassword(e.target.value) }
+            value={password}
           />
         </Form.Group>
 
