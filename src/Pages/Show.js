@@ -13,7 +13,7 @@ function Show(props){
 
   function fetchDeckInfo(id){
     DeckModel.findOne(id).then((data) => {
-      console.log(data);
+      // console.log(data);
       setDeck(data.deck);
     })
   };
