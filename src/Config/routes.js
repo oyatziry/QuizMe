@@ -16,8 +16,9 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path='/' component={ Home } />
-      <Route path='/login' component={ LogIn } />
-      <Route path='/signup' component={ SignUp } />
+      <Route exact path='/login' component={ LogIn } />
+      <Route exact path='/signup' component={ SignUp } />
+      <Route path='/:id' component={ Show } />
       { loggedIn && (
         <Switch>
           <Route exact path='/profile' component={ Profile } />
