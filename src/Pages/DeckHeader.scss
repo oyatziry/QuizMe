@@ -1,8 +1,14 @@
 .deck-header{
   margin: 4% 5% 3% 5%;
+  display: flex;
+  justify-content: space-between;
   h3{
     text-align: left;
     font-size: 2em;
+  }
+  .btn{
+    background-color: rgb(78, 112, 110);
+    border-color: rgb(78, 112, 110);
   }
 }
 
