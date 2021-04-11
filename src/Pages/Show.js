@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import DeckModel from '../models/deck';
+import { useRecoilState } from 'recoil';
+import { userState } from '../recoil/atoms';
 
 import './Flashcard.scss';
 import './DeckHeader.scss';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import Button from 'react-bootstrap/Button';
 
 function Show(props){
   const deckId = props.match.params.id;
@@ -11,8 +14,7 @@ function Show(props){
   let [progress, setProgress] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [deck, setDeck] = useState([]);
-
-  console.log('------>',deck);
+  const [user] = useRecoilState(userState);
 
   useEffect(function(){
     fetchDeckInfo(deckId);
@@ -20,7 +22,6 @@ function Show(props){
 
   function fetchDeckInfo(id){
     DeckModel.findOne(id).then((data) => {
-      // console.log(data);
       setDeck(data.deck);
     })
   };
@@ -40,7 +41,6 @@ function Show(props){
       setIndex(index++);
     }
     handleProgressBar();
-    console.log(index);
   }
 
   function handlePreviousBtn(){
@@ -54,7 +54,6 @@ function Show(props){
       setIndex(index--);
     }
     handleProgressBar();
-    console.log(index);
   }
 
   function handleProgressBar(){
@@ -67,6 +66,7 @@ function Show(props){
         <>
           <div className="deck-header">
             <h3> {deck.name} </h3>
+            <Button> Add </Button>
           </div>
           { deck.flashcards.length ?
             <div>
