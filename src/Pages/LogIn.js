@@ -16,8 +16,8 @@ function LogIn(props){
     event.preventDefault();
 
     AuthModel.find({'username': username}).then((userData) => {
-      console.log(userData);
-      setUser(userData.user.name);
+      // console.log(userData);
+      setUser(userData.user.username);
       props.history.push('/profile');
     })
   }

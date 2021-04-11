@@ -8,7 +8,7 @@ function Home() {
   const [decks, setDecks] = useState([]);
 
   useEffect(function(){
-    console.log('useEffect was called');
+    // console.log('useEffect was called');
     fetchDecks();
   }, []);
 
