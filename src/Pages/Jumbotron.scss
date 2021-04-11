@@ -1,0 +1,21 @@
+$dark-blue-text: rgb(32,43,51);
+
+.jumbotron{
+  height: 500px;
+  background-color: rgb(197,209,210) !important;
+  h1{
+    font-size: 4em;
+    padding-top: 35%;
+    color: $dark-blue-text;
+  }
+  p{
+    color: $dark-blue-text;
+  }
+  img{
+    width: 80%;
+  }
+}
+
+body{
+  background-color: rgb(231, 231, 231) !important;
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 
+import './DeckCard.scss';
+
 function DeckCard(props){
   return(
-    <div>
+    <div className="deck-card">
       <h3> {props.name} </h3>
-      <p> This Deck has {props.flashcards.length} flashcards. </p>
     </div>
   )
 };

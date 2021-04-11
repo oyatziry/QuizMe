@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
 
+import './Header.scss';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
