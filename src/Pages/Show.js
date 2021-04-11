@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import DeckModel from '../models/deck';
 
 import './Flashcard.scss';
-import DeckModel from '../models/deck';
+import './DeckHeader.scss';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 function Show(props){
   const deckId = props.match.params.id;
@@ -36,6 +38,7 @@ function Show(props){
     else{
       setIndex(index++);
     }
+    handleProgressBar();
     console.log(index);
   }
 
@@ -49,22 +52,31 @@ function Show(props){
     if( index > 0 ){
       setIndex(index--);
     }
+    handleProgressBar();
     console.log(index);
+  }
+
+  function handleProgressBar(){
+    return (index/deck.flashcards.length) * 100;
   }
 
   return (
     <div>
-      <h1> This is the show page </h1>
       { deck.name ? 
         <>
-          <h3> {deck.name} </h3>
+          <div className="deck-header">
+            <h3> {deck.name} </h3>
+          </div>
           { deck.flashcards.length ?
-            <div className="flashcard" onClick={handleCardClick}>
-              {showAnswer ? <h3>{deck.flashcards[index].back}</h3> : <h3>{deck.flashcards[index].front}</h3> }
+            <div>
+              <div className="flashcard" onClick={handleCardClick}>
+                {showAnswer ? <h3>{deck.flashcards[index].back}</h3> : <h3>{deck.flashcards[index].front}</h3> }
+              </div>
+              <h4 onClick={handlePreviousBtn}> Previous </h4>
+              <h4 onClick={handleNextBtn}> Next </h4>
+              <ProgressBar now={handleProgressBar}/>
             </div>
           : "Loading flashcards"}
-          <h4 onClick={handleNextBtn}> next </h4>
-          <h4 onClick={handlePreviousBtn}> previous </h4>
         </>
       : "Loading..." }
     </div>

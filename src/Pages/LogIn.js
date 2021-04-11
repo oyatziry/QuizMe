@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import AuthModel from '../models/auth';
 import { useRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
+
+import './Forms.scss';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 
 function LogIn(props){
   const [username, setUsername] = useState("");
@@ -45,7 +46,7 @@ function LogIn(props){
           />
         </Form.Group>
 
-        <input type="submit" value="Submit"></input>
+        <input className="submit" type="submit" value="Submit"></input>
       </Form>
     </Container>
   );

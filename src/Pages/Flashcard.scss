@@ -5,8 +5,23 @@
   background-color: whitesmoke;
   border: 2px solid black;
   margin: auto;
+  margin-bottom: 3%;
+  h3{
+    margin-top: 15%;
+    font-size: 3em;
+  }
 }
 
-.flashcard-text{
-  margin-top: 45%;
+.flashcard:hover{
+  cursor: pointer;
+}
+
+.progress{
+  width: 50%;
+  margin: auto;
+  margin-top: 3%;
+  background-color: lightgrey;
+  .progress-bar{
+    background-color: yellow;
+  }
 }
