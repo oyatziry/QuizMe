@@ -63,7 +63,7 @@ function Show(props){
 
   return (
     <div>
-      { deck.name ? 
+      { deck && deck.name ? 
         <>
           <div className="deck-header">
             <h3> {deck.name} </h3>

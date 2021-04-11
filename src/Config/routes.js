@@ -18,13 +18,11 @@ const Routes = () => {
       <Route exact path='/' component={ Home } />
       <Route exact path='/login' component={ LogIn } />
       <Route exact path='/signup' component={ SignUp } />
-      <Route path='/:id' component={ Show } />
       { loggedIn && (
-        <Switch>
-          <Route exact path='/profile' component={ Profile } />
-          <Route path='/:id' component={ Show } />
-        </Switch>
+        <Route exact path='/profile' component={ Profile } />
       )}
+      <Route path='/:id' component={ Show } />
+      
     </Switch>
   )
 }
