@@ -1,15 +1,18 @@
 import React from 'react';
-
 import { useRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
+
+import './Profile.scss';
+import Container from 'react-bootstrap/Container';
 
 function Profile() {
   const [user] = useRecoilState(userState);
 
   return (
     <div>
-      <h1> This is the Profile Page </h1>
-      <h3> Hello, welcome back {user}! </h3>
+      <Container>
+        <h3> Welcome {user.charAt(0).toUpperCase() + user.slice(1)}! </h3>
+      </Container>
     </div>
   )
 }
