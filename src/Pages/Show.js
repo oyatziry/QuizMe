@@ -8,6 +8,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 function Show(props){
   const deckId = props.match.params.id;
   let [index, setIndex] = useState(0);
+  let [progress, setProgress] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [deck, setDeck] = useState([]);
 
@@ -47,7 +48,7 @@ function Show(props){
       setShowAnswer(!showAnswer);
     }
     if( index <= 0){
-      setIndex(index = (deck.flashcards.length - 1));
+      setIndex(deck.flashcards.length - 1);
     }
     if( index > 0 ){
       setIndex(index--);
@@ -57,7 +58,7 @@ function Show(props){
   }
 
   function handleProgressBar(){
-    return (index/deck.flashcards.length) * 100;
+    setProgress( (index/deck.flashcards.length) * 100 );
   }
 
   return (
@@ -74,7 +75,7 @@ function Show(props){
               </div>
               <h4 onClick={handlePreviousBtn}> Previous </h4>
               <h4 onClick={handleNextBtn}> Next </h4>
-              <ProgressBar now={handleProgressBar}/>
+              <ProgressBar now={progress}/>
             </div>
           : "Loading flashcards"}
         </>
