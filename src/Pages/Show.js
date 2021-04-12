@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import DeckModel from '../models/deck';
-import { useRecoilState } from 'recoil';
-import { userState } from '../recoil/atoms';
 
 import './Flashcard.scss';
 import './DeckHeader.scss';
+import './Aside.scss';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
 function Show(props){
   const deckId = props.match.params.id;
   let [index, setIndex] = useState(0);
   let [progress, setProgress] = useState(0);
+  let [tally, setTally] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [showPosReaction, setShowPosReaction] = useState(false);
   const [deck, setDeck] = useState([]);
-  const [user] = useRecoilState(userState);
 
   useEffect(function(){
     fetchDeckInfo(deckId);
@@ -60,26 +62,44 @@ function Show(props){
     setProgress( (index/deck.flashcards.length) * 100 );
   }
 
+  function plusTally(){
+    if (tally <= deck.flashcards.length) setTally(tally++);
+  }
+
+  function minusTally(){
+    if (tally > 0) setTally(tally--);
+  }
+
   return (
     <div>
-      { deck && deck.name ? 
-        <>
-          <div className="deck-header">
-            <h3> {deck.name} </h3>
-            <Button> Add </Button>
-          </div>
-          { deck.flashcards.length ?
-            <div>
-              <div className="flashcard" onClick={handleCardClick}>
-                {showAnswer ? <h3>{deck.flashcards[index].back}</h3> : <h3>{deck.flashcards[index].front}</h3> }
+      <Row>
+        { deck && deck.name ? 
+          <>
+            <Col xs={12} md={8}>
+              <div className="deck-header">
+                <h3> {deck.name} </h3>
               </div>
-              <h4 onClick={handlePreviousBtn}> Previous </h4>
-              <h4 onClick={handleNextBtn}> Next </h4>
-              <ProgressBar now={progress}/>
-            </div>
-          : "Loading flashcards"}
-        </>
-      : "Loading..." }
+              { deck.flashcards.length ?
+                <div>
+                  <div className="flashcard" onClick={handleCardClick}>
+                    {showAnswer ? <h3>{deck.flashcards[index].back}</h3> : <h3>{deck.flashcards[index].front}</h3> }
+                  </div>
+                  <h4 onClick={handlePreviousBtn}> Previous </h4>
+                  <h4 onClick={handleNextBtn}> Next </h4>
+                  <ProgressBar now={progress}/>
+                </div>
+              : "Loading flashcards"}
+            </Col>
+            <Col xs={12} md={4}>
+              <div className="aside">
+                <p> {tally} / {deck.flashcards.length} </p>
+                <Button variant="light" onClick={plusTally}> Correct </Button>
+                <Button variant="light" onClick={minusTally}> Wrong </Button>
+              </div>
+            </Col>
+          </>
+          : "Loading..." }
+        </Row>
     </div>
   );
 }

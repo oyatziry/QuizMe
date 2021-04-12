@@ -11,6 +11,7 @@ function Profile() {
   return (
     <div>
       <Container>
+        <img src="/icons/profile.png" alt="profile image"/>
         <h3> Welcome {user.charAt(0).toUpperCase() + user.slice(1)}! </h3>
       </Container>
     </div>

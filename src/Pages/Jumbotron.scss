@@ -1,15 +1,18 @@
 $dark-blue-text: rgb(32,43,51);
 
 .jumbotron{
-  height: 500px;
+  height: 100%;
   background-color: rgb(197,209,210) !important;
   h1{
-    font-size: 4em;
+    font-size: 7em;
+    font-weight: bold;
     padding-top: 35%;
     color: $dark-blue-text;
+    font-family: monospace;
   }
   p{
     color: $dark-blue-text;
+    font-size: 1.3em;
   }
   img{
     width: 80%;

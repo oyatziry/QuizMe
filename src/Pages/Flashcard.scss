@@ -1,6 +1,6 @@
 .flashcard{
   padding: 5%;
-  width: 40%;
+  width: 60%;
   height: 300px;
   background-color: whitesmoke;
   border: 2px solid black;
@@ -17,9 +17,10 @@
 }
 
 .progress{
-  width: 50%;
+  width: 60%;
   margin: auto;
   margin-top: 3%;
+  margin-bottom: 5%;
   background-color: rgb(197,209,210) !important;
   .progress-bar{
     background-color: rgb(78, 112, 110);

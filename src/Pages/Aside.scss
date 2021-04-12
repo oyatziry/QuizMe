@@ -1,0 +1,18 @@
+.aside{
+  background-color: rgb(197,209,210);
+  height: 100vh;
+  p{
+    padding-top: 50%;
+    font-size: 4em;
+    font-weight: bold;
+  }
+  .btn{
+    margin: 3% 3% 0 3%;
+    background-color: rgb(78, 112, 110);
+    border-color: rgb(78, 112, 110);
+  }
+  .btn:hover{
+    background-color: rgb(103, 150, 147);
+    border-color: rgb(103, 150, 147);
+  }
+}

@@ -14,7 +14,6 @@ function Home() {
   const [decks, setDecks] = useState([]);
 
   useEffect(function(){
-    // console.log('useEffect was called');
     fetchDecks();
   }, []);
 
@@ -37,12 +36,12 @@ function Home() {
   return (
     <div>
       <Jumbotron>
-        <Row xs={1} md={2}>
-          <Col>
+        <Row>
+          <Col xs={12} md={6}>
             <h1> QuizMe </h1>
-            <p> Let's starting acing </p>
+            <p> Build the habit that keeps you going. </p>
           </Col>
-          <Col>
+          <Col xs={12} md={6}>
             <img src="icons/books.png" alt="landing-image" />
           </Col>
         </Row>

@@ -1,5 +1,12 @@
 .container{
-  margin: 5%;
+  margin: 5% 0 0 0;
+  display: flex;
+  flex-direction: column;
+  img{
+    width: 25%;
+    float: left;
+    display: block;
+  }
   h3{
     text-align: left;
   }
