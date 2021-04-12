@@ -4,6 +4,8 @@ QuizMe is an education technology application meant to assist users in their stu
 
 My inspiration to create this app was to get familiar with the MERN tech stack.
 
+The backend of this application can be found [here](https://github.com/oyatziry/QuizMe-API).
+
 ## Technologies 
 - React
 - Express
