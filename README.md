@@ -1,3 +1,28 @@
+## QuizMe
+
+QuizMe is an education technology application meant to assist users in their studying needs. Upon entry to the application, users can navigate and find flashcards for different subjects. Users can also sign up and access a profile page.
+
+## Technologies 
+React
+Express
+Node JS
+Mongo DB
+Mongoose
+Cors
+
+## User Stories
+- As a user, I would like to see a home page and see a list of flashcard decks.
+- As a user, I would like to log in and access a personal profile page to see all my saved flashcards decks.
+- As a user, I would like to select and view a deck of flashcards.
+- As a user, I would like to flip through flashcards using a user friendly component like a button.
+- As a user, I would like to tap a flashcard to see the back of it and reveal a definition to be able to quiz myself on the words.
+- As a user, I would like to see my progress in flipping through the flashcards.
+
+## ERD
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
