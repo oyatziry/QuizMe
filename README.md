@@ -10,6 +10,7 @@ My inspiration to create this app was to get familiar with the MERN tech stack.
 - Node JS
 - Mongo DB
 - Mongoose
+- SASS
 - Cors
 
 ## User Stories
