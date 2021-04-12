@@ -19,8 +19,17 @@ Cors
 - As a user, I would like to see my progress in flipping through the flashcards.
 
 ## ERD
+![ERD](https://user-images.githubusercontent.com/28818219/114466451-5c8f5480-9b9d-11eb-925d-a7d572e9c582.png)
 
+## Wireframes:
+Home Page
+![Home Page](https://user-images.githubusercontent.com/28818219/114466547-7af55000-9b9d-11eb-85a5-ea1a62f1aa4e.png)
 
+Flashcard Page
+![View - Flashcards](https://user-images.githubusercontent.com/28818219/114466581-88aad580-9b9d-11eb-8483-1b7778bc70be.png)
+
+Profile Page
+![Profile Page](https://user-images.githubusercontent.com/28818219/114466631-97918800-9b9d-11eb-84e5-189fbbda56c5.png)
 
 
 # Getting Started with Create React App
