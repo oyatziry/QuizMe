@@ -2,6 +2,8 @@
 
 QuizMe is an education technology application meant to assist users in their studying needs. Upon entry to the application, users can navigate and find flashcards for different subjects. Users can also sign up and access a profile page.
 
+My inspiration to create this app was to get familiar with the MERN tech stack.
+
 ## Technologies 
 - React
 - Express
@@ -19,7 +21,7 @@ QuizMe is an education technology application meant to assist users in their stu
 - As a user, I would like to see my progress in flipping through the flashcards.
 
 ## ERD
-![ERD](https://user-images.githubusercontent.com/28818219/114466451-5c8f5480-9b9d-11eb-925d-a7d572e9c582.png)
+![erd](https://user-images.githubusercontent.com/28818219/114468189-f48e3d80-9b9f-11eb-935e-ee40a69e14d8.png)
 
 ## Screenshots:
 Home Page
