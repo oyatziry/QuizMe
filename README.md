@@ -3,12 +3,12 @@
 QuizMe is an education technology application meant to assist users in their studying needs. Upon entry to the application, users can navigate and find flashcards for different subjects. Users can also sign up and access a profile page.
 
 ## Technologies 
-React
-Express
-Node JS
-Mongo DB
-Mongoose
-Cors
+- React
+- Express
+- Node JS
+- Mongo DB
+- Mongoose
+- Cors
 
 ## User Stories
 - As a user, I would like to see a home page and see a list of flashcard decks.
@@ -21,6 +21,19 @@ Cors
 ## ERD
 ![ERD](https://user-images.githubusercontent.com/28818219/114466451-5c8f5480-9b9d-11eb-925d-a7d572e9c582.png)
 
+## Screenshots:
+Home Page
+![Home](https://user-images.githubusercontent.com/28818219/114467583-fe637100-9b9e-11eb-917c-277614bbd4a0.png)
+
+Flashcard Page
+![Show](https://user-images.githubusercontent.com/28818219/114467630-0d4a2380-9b9f-11eb-8638-18e4cc62a8e4.png)
+
+Sign Up
+![Sign Up](https://user-images.githubusercontent.com/28818219/114467684-2357e400-9b9f-11eb-86ed-e0bf896a053b.png)
+
+Profile Page
+![Profile](https://user-images.githubusercontent.com/28818219/114467715-2f43a600-9b9f-11eb-8cbb-7a1049fce3e2.png)
+
 ## Wireframes:
 Home Page
 ![Home Page](https://user-images.githubusercontent.com/28818219/114466547-7af55000-9b9d-11eb-85a5-ea1a62f1aa4e.png)
@@ -31,6 +44,11 @@ Flashcard Page
 Profile Page
 ![Profile Page](https://user-images.githubusercontent.com/28818219/114466631-97918800-9b9d-11eb-84e5-189fbbda56c5.png)
 
+
+## Unsolved Problems/Future Features:
+- Users need to double click on the Next, Previous, and Tally buttons on the flashcard page to get the UI to update. As a continuation of my project, I would like to fix this current bug so it is more intuitive and user friendly approach.
+- As a continuation, I would also like to include more CRUD functionality and have the user save and remove a deck of flashcards. I would also like to allow the user to create new decks of flashcards and edit them.
+- As a continuation, I would like to learn and explore ways to animate current features like the flip of a flashcard.  
 
 # Getting Started with Create React App
 
